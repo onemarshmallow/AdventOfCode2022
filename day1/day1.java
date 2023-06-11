@@ -12,8 +12,8 @@ import java.util.Scanner;
 public class day1 {
     public static void main(String[] args) {
         System.out.println("-------------");
+        part1();
         part2();
-        
         System.out.println("-------------");
     }
 
@@ -100,7 +100,7 @@ public class day1 {
         }
         elfCalories = 0; // reset for next elf
         System.out.println("The top 3 highest number of calories an elf is carrying is " + first + ", " + second + ", and " + third + " calories.");
-        System.out.println("The sum of all 3 highest number of calories is " + (first + second + third));
+        System.out.println("The sum of all 3 highest number of calories is " + (first + second + third) + ".");
         myReader.close();
         }
         catch (FileNotFoundException e) {
