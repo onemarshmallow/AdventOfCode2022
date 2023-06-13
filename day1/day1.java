@@ -20,29 +20,29 @@ public class day1 {
     private static void part1() {
         // sums up each group of numbers separated by blank lines, then finds the max
         try {
-        File sampleInput = new File("day1\\input.txt");
-        Scanner myReader = new Scanner(sampleInput);
-        int maxCalories = 0; // the highest number of calories of all elves
-        int elfCalories = 0; // the current number of calories that the elf has
+            File input = new File("day1\\input.txt");
+            Scanner myReader = new Scanner(input);
+            int maxCalories = 0; // the highest number of calories of all elves
+            int elfCalories = 0; // the current number of calories that the elf has
 
-        while (myReader.hasNextLine()) {
-            String data = myReader.nextLine();
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
 
-            if (data.equals("")) { // line is empty
-                // System.out.println("EMPTY LINE");
-                if (elfCalories > maxCalories) {
-                    maxCalories = elfCalories;
+                if (data.equals("")) { // line is empty
+                    // System.out.println("EMPTY LINE");
+                    if (elfCalories > maxCalories) {
+                        maxCalories = elfCalories;
+                    }
+                    elfCalories = 0; // reset for next elf
+                } else {
+                    // System.out.println(data);
+
+                    elfCalories += Integer.parseInt(data); // converts data into int and adds to elfCalories
+
                 }
-                elfCalories = 0; // reset for next elf
-            } else {
-                // System.out.println(data);
-
-                elfCalories += Integer.parseInt(data); // converts data into int and adds to elfCalories
-
             }
-        }
-        System.out.println("The highest calories an elf is carring is " + maxCalories + " calories.");
-        myReader.close();
+            System.out.println("The highest calories an elf is carring is " + maxCalories + " calories.");
+            myReader.close();
         }
         catch (FileNotFoundException e) {
             System.out.println("An error has occured.");
@@ -53,55 +53,55 @@ public class day1 {
     private static void part2() {
         // sums up each group of numbers separated by blank lines, then finds the top 3 max
         try {
-        File sampleInput = new File("day1\\input.txt");
-        Scanner myReader = new Scanner(sampleInput);
-        int first = 0; // the highest number of calories of all elves
-        int second = 0; // second highest
-        int third = 0; // third highest
-        int elfCalories = 0; // the current number of calories that the elf has
+            File input = new File("day1\\input.txt");
+            Scanner myReader = new Scanner(input);
+            int first = 0; // the highest number of calories of all elves
+            int second = 0; // second highest
+            int third = 0; // third highest
+            int elfCalories = 0; // the current number of calories that the elf has
 
-        while (myReader.hasNextLine()) {
-            String data = myReader.nextLine();
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
 
-            if (data.equals("")) { // line is empty
-                if (elfCalories > first) {
-                    // moves the calories down
-                    third = second;
-                    second = first;
-                    first = elfCalories;
-                } else if (elfCalories > second) {
-                    // moves the calories down
-                    third = second;
-                    second = elfCalories;
-                } else if (elfCalories > third) {
-                    third = elfCalories;
+                if (data.equals("")) { // line is empty
+                    if (elfCalories > first) {
+                        // moves the calories down
+                        third = second;
+                        second = first;
+                        first = elfCalories;
+                    } else if (elfCalories > second) {
+                        // moves the calories down
+                        third = second;
+                        second = elfCalories;
+                    } else if (elfCalories > third) {
+                        third = elfCalories;
+                    }
+                    elfCalories = 0; // reset for next elf
+                } else {
+
+                    elfCalories += Integer.parseInt(data); // converts data into int and adds to elfCalories
+
                 }
-                elfCalories = 0; // reset for next elf
-            } else {
-
-                elfCalories += Integer.parseInt(data); // converts data into int and adds to elfCalories
 
             }
-
-        }
-        // this is copied from the while loop, so that it runs one more time after the 
-        // last line of the input is processed.
-        if (elfCalories > first) {
-            // moves the calories down
-            third = second;
-            second = first;
-            first = elfCalories;
-        } else if (elfCalories > second) {
-            // moves the calories down
-            third = second;
-            second = elfCalories;
-        } else if (elfCalories > third) {
-            third = elfCalories;
-        }
-        elfCalories = 0; // reset for next elf
-        System.out.println("The top 3 highest number of calories an elf is carrying is " + first + ", " + second + ", and " + third + " calories.");
-        System.out.println("The sum of all 3 highest number of calories is " + (first + second + third) + ".");
-        myReader.close();
+            // this is copied from the while loop, so that it runs one more time after the 
+            // last line of the input is processed.
+            if (elfCalories > first) {
+                // moves the calories down
+                third = second;
+                second = first;
+                first = elfCalories;
+            } else if (elfCalories > second) {
+                // moves the calories down
+                third = second;
+                second = elfCalories;
+            } else if (elfCalories > third) {
+                third = elfCalories;
+            }
+            elfCalories = 0; // reset for next elf
+            System.out.println("The top 3 highest number of calories an elf is carrying is " + first + ", " + second + ", and " + third + " calories.");
+            System.out.println("The sum of all 3 highest number of calories is " + (first + second + third) + ".");
+            myReader.close();
         }
         catch (FileNotFoundException e) {
             System.out.println("An error has occured.");
