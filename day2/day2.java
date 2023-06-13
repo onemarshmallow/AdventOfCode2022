@@ -1,6 +1,6 @@
+// This parses two chars from a line in a text file and calculates a score based on the chars.
 // Part 1 and 2 Complete!
 // https://adventofcode.com/2022/day/2
-// This parses two chars from a line in a text file and calculates a score based on the chars.
 
 package day2;
 

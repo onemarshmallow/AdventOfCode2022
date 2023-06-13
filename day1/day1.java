@@ -1,6 +1,8 @@
+// This calculates the sum of each block of numbers from a text file and finds the top 3 highest sums.
 // Part 1 & 2 Completed!
 // https://adventofcode.com/2022/day/1
 // I used this for reference: https://www.w3schools.com/java/java_files_read.asp
+
 package day1;
 
 import java.io.File;
