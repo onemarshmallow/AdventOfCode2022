@@ -19,6 +19,8 @@ public class day3 {
     }
 
     private static void part1() {
+        // processes a string line by line from a text file and calculates a number (called priority)
+        //  based on the ASCII value of a common character in the string.
         System.out.println("Part 1");
         try {
             File input = new File("day3\\input.txt");
@@ -43,6 +45,7 @@ public class day3 {
             }
 
             System.out.println("Total priority is " + sumPriority);
+            myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error has occured.");
             e.printStackTrace();
@@ -51,6 +54,8 @@ public class day3 {
     }
 
     private static void part2() {
+        // processes 3 lines of text at a time from text file, finds the common char in all 3 lines,
+        // then calculates priority (a number based on ASCII value)
         System.out.println("Part 2");
         try {
             File input = new File("day3\\input.txt");
@@ -78,6 +83,7 @@ public class day3 {
             }
 
             System.out.println("Total priority is " + sumPriority);
+            myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error has occured.");
             e.printStackTrace();
