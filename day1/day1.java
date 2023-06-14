@@ -22,7 +22,7 @@ public class day1 {
     private static void part1() {
         // sums up each group of numbers separated by blank lines, then finds the max
         try {
-            File input = new File("day1\\input.txt");
+            File input = new File("day1\\input.txt"); // you can change input.txt to sampleInput.txt to use the sample input for testing
             Scanner myReader = new Scanner(input);
             int maxCalories = 0; // the highest number of calories of all elves
             int elfCalories = 0; // the current number of calories that the elf has
