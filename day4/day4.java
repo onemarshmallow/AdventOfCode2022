@@ -12,10 +12,9 @@ import java.util.Scanner;
 public class day4 {
     public static void main(String[] args) {
         System.out.println("-------------");
-        // part1();
-        part2();
-        // System.out.println(countContained(3, 96, 3, 97));
+        part1();
         System.out.println();
+        part2();
         System.out.println("-------------");
     }
 
